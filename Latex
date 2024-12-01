@@ -16,7 +16,7 @@
 
 
 \title{Abgabe 1 für Computergestütze Methoden}
-\author{Gruppe 43, Lea Brand, Lara Wagner}
+\author{Gruppe 43, Lea Brand 4351303, Lara Wagner 4333780}
 \date{01.12.2024}
 
 \begin{document}
@@ -30,11 +30,11 @@
 \section{Der zentrale Grenzwertsatz}
 
 Der zentrale Grenzwertsatz (ZGS) ist ein fundamentales Resultat der Wahr-
-scheinlichkeitstheorie, das die Verteilung von Summen unabh¨ angiger, identisch
+scheinlichkeitstheorie, das die Verteilung von Summen unabhängiger, identisch
 verteilter $(i.i.d.)$ Zufallsvariablen (ZV) beschreibt. Er besagt, dass unter be-
-stimmten Voraussetzungen die Summe einer großen Anzahl solcher ZV ann¨ ahernd
-normalverteilt ist, unabh¨ angig von der Verteilung der einzelnen ZV. Dies ist be-
-sonders n¨ utzlich, da die Normalverteilung gut untersucht und mathematisch
+stimmten Voraussetzungen die Summe einer großen Anzahl solcher ZV annähernd
+normalverteilt ist, unabhängig von der Verteilung der einzelnen ZV. Dies ist be-
+sonders nützlich, da die Normalverteilung gut untersucht und mathematisch
 handhabbar ist. 
 
 
@@ -79,15 +79,19 @@ theorie angewendet. Typische Beispiele sind:
 
 \subsection{Berechnung der höchsten mittleren Temperatur}
 
-Wir haben alle Datensätze von Gruppe 43 in eine neue Tabelle eingefügt, wobei uns aufgefallen ist, dass sich alle Daten eines Datums jeweils in einer Spalte befanden. Wir haben alle Zeilen ausgewählt und durch “Teilen in Spalten" die Daten, nach Kommas, in verschiedene Spalten aufteilen können. Dabei ist uns aufgefallen, dass viele Daten nicht vorhanden (NA), falsch (Windspeed=-1) oder in der falschen Spalte waren (Windspeed=Jun 49). Wir haben dann am Ende der Spalte \textit{average temperature} das Summenzeichen verwendet und dort \textit{max} ausgewählt und so den Wert $28,3{\degree}C$ Grad herausbekommen, als höchste mittlere Temperatur.
+Wir haben alle Datensätze von Gruppe 43 in eine neue Tabelle eingefügt, wobei uns aufgefallen ist, dass sich alle Daten eines Datums jeweils in einer Spalte befanden. Wir haben alle Zeilen ausgewählt und durch "Teilen in Spalten" die Daten, nach Kommas, in verschiedene Spalten aufteilen können. Dabei ist uns aufgefallen, dass viele Daten nicht vorhanden (NA), falsch (Windspeed= $-1$) oder in der falschen Spalte waren (Windspeed=Jun. 49). Wir haben dann am Ende der Spalte \textit{average temperature} das Summenzeichen verwendet und dort \textit{max} ausgewählt und so den Wert $28,3{\degree}C$ Grad herausbekommen, als höchste mittlere Temperatur.
 
 \subsection{Datenbankschema entwerfen}
 
+Link zu GitHub: \url{https://github.com/Lara229/Gruppe_43_Abgabe_1_Comet}
+
+
 1. Normalform: Durch 2.1. enthält jede Spalte einen atomaren Wert.
+
 2. Normalform: Aufteilung in mehrere Tabellen abhängig vom Primärschlüssel.
 
-Wir haben in 3 Tabellen aufgeteilt, in "group", "date" und "values".
-In der Tabelle "group" haben wir die Spalten "group id" und "station", in "date id" haben wir die Spalten "date", "day of year", "day of week" und "month of year"  und in "values" haben wir "group id", "date id", "percipation", "windspeed", "min temperature", "average temperature", "max temperature" und "count".
+Wir haben in 3 Tabellen aufgeteilt, in group, date und values.
+In der Tabelle group haben wir die Spalten group id und station, in date id haben wir die Spalten date, day of year, day of week und month of year  und in values haben wir group id, date id, percipation, windspeed, min temperature, average temperature, max temperature und count.
 
 \subsection{SQL und CSV}
 
@@ -126,7 +130,7 @@ CREATE TABLE "values43" (
 
 Import der zugeordneten Daten als CSV:
 
-In der Excel-Datei haben wir unsere Gruppen-Tabelle abgespeichert als CSV-Datei. Dann haben wir den DB Browser für SQLite benutzt und die CSV-Datei importiert, indem wir im Menü "Importieren" ausgewählt haben und unsere vorbereitete Datei importiert. Wir haben den Feld-Seperator "," ausgewählt, String-Zeichen "`" und die Codierung "UTF-8".
+In der Excel-Datei haben wir unsere Gruppen-Tabelle abgespeichert als CSV-Datei. Dann haben wir den DB Browser für SQLite benutzt und die CSV-Datei importiert, indem wir im Menü Importieren ausgewählt haben und unsere vorbereitete Datei importiert. Wir haben das Komma als Feld-Seperator ausgewählt, das String-Zeichen $`$ und die Codierung UTF-8.
 
 \subsection{Formulierung der SQL-Abfrage, um höchste mittlere Temperatur zu ermitteln}
 
@@ -147,4 +151,3 @@ WHERE average_temperature not in ('NA')
 
 
 \end{document}
-
